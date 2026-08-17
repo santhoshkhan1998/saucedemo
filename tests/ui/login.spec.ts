@@ -1,5 +1,10 @@
-import { test, expect } from '../../fixtures/testFixtures';
-import users from '../../test-data/users.json';
+
+import { test, expect } from '../../fixtures/testFixtures.js';
+import fs from 'fs';
+
+const users = JSON.parse(fs.readFileSync(new URL('../../test-data/users.json', import.meta.url), 'utf8'));
+
+
 
 test.describe('Login Scenarios', () => {
   test('Successful Login', async ({ loginPage, page }) => {

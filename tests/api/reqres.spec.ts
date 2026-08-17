@@ -1,8 +1,8 @@
-import { test, expect } from '../../fixtures/testFixtures';
-import { ReqResClient } from '../../api/clients/ReqResClient';
-import { createUserPayload } from '../../api/payloads/user.payload';
+import { test, expect } from '../../fixtures/testFixtures.js';
+import { ReqResClient } from '../../api/clients/ReqResClient.js';
+import { createUserPayload } from '../../api/payloads/user.payload.js';
 import Ajv from 'ajv';
-import userSchema from '../../api/schemas/user.schema.json';
+import userSchema from '../../api/schemas/user.schema.json' with { type: 'json' };
 
 const ajv = new Ajv();
 

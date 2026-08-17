@@ -1,4 +1,4 @@
-import { test, expect } from '../../fixtures/testFixtures';
+import { test, expect } from '../../fixtures/testFixtures.js';
 
 test('Add and Remove Product from Cart and Checkout', async ({ loginPage, page }) => {
   await page.goto('/');

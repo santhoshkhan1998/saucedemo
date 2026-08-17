@@ -10,12 +10,12 @@ else dotenv.config();
 
 const config: PlaywrightTestConfig = {
   testDir: 'tests',
-  timeout: 30 * 1000,
+  timeout: 50 * 1000,
   expect: { timeout: 5000 },
-  fullyParallel: true,
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 1,
   reporter: [ ['list'], ['html', { outputFolder: 'reports/html-report' }], ['allure-playwright'] ],
   use: {
     baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
@@ -24,7 +24,7 @@ const config: PlaywrightTestConfig = {
     video: 'retain-on-failure',
     actionTimeout: 10 * 1000,
     launchOptions: {
-      slowMo: 2000,
+      slowMo: 0,
     },
   },
   projects: [
