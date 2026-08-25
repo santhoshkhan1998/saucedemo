@@ -12,10 +12,10 @@ const config: PlaywrightTestConfig = {
   testDir: 'tests',
   timeout: 50 * 1000,
   expect: { timeout: 5000 },
-  fullyParallel: false,
+  fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 3 : 2,
   reporter: [ ['list'], ['html', { outputFolder: 'reports/html-report' }], ['allure-playwright'] ],
   use: {
     baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
@@ -28,7 +28,7 @@ const config: PlaywrightTestConfig = {
     },
   },
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } }
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     // { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
     // { name: 'webkit', use: { ...devices['Desktop Safari'] } },
   ],
