@@ -10,6 +10,10 @@ node_modules/
 # Allure Results
 /allure-results/
 
+# TypeScript build output
+/dist/
+
 # Temporary files
 Rough.md
 /reports/
+/reports/html-report/index.html
