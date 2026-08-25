@@ -1,5 +1,5 @@
 import { test as base, expect, APIRequestContext } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { LoginPage } from '../pages/LoginPage.js';
 import * as fs from 'fs';
 
 type TestFixtures = {
